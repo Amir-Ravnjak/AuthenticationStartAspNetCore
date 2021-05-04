@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationStartAspNetCore", "AuthenticationStartAspNetCore\AuthenticationStartAspNetCore.csproj", "{397DF0CD-9BCD-40E7-A36F-B76C1C0752B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "Persistance\Persistance.csproj", "{008FF5ED-5AC9-42B9-9C49-B7E1FE96E3AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{397DF0CD-9BCD-40E7-A36F-B76C1C0752B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397DF0CD-9BCD-40E7-A36F-B76C1C0752B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397DF0CD-9BCD-40E7-A36F-B76C1C0752B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397DF0CD-9BCD-40E7-A36F-B76C1C0752B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008FF5ED-5AC9-42B9-9C49-B7E1FE96E3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008FF5ED-5AC9-42B9-9C49-B7E1FE96E3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008FF5ED-5AC9-42B9-9C49-B7E1FE96E3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008FF5ED-5AC9-42B9-9C49-B7E1FE96E3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EEBEF34-AB5C-4F81-8C26-53878B1A2CEB}
+	EndGlobalSection
+EndGlobal

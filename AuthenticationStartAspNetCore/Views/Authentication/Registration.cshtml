@@ -1,0 +1,46 @@
+﻿@{
+    string message = (string)TempData["message"];
+}
+    <div class="container">
+        <h2>Registracija korisnika</h2>
+
+        <form class="form-signin" action="/Authentication/Registration" method="post">
+            @if (message != null)
+            {
+                <h5 class="alert alert-danger">@message</h5>
+            }
+            <label for="username">Korisničko ime</label>
+            @Html.ValidationMessage("Username")
+            <input type="text" autocomplete="new-password" name="username" id="username" class="form-control" placeholder="Korisničko ime" autofocus />
+            <label for="password">Lozinka</label>
+            @Html.ValidationMessage("Password")
+            <input type="password" autocomplete="new-password" name="password" id="password" class="form-control" placeholder="Lozinka" />
+                        
+            <label for="firstName">Ime</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Ime" />
+            <label for="lastName">Prezime</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Prezime" />
+            <label for="dateOfBirth">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" />
+            <label for="mobileNumber">Broj telefona</label>
+            <input type="text" name="mobileNumber" class="form-control" placeholder="Broj telefona" />
+            <br />
+            <input type="submit" class="btn btn-primary" style="min-width:7rem;" value="Snimi" />
+            <a href="/Home/Login" class="btn btn-danger" style="min-width:7rem;">Nazad</a>
+        </form>
+        <br />
+        <br />
+
+
+    </div>
+
+<style>
+
+    .field-validation-error {
+        color: red;
+        display: block;
+    }
+
+</style>
+
+

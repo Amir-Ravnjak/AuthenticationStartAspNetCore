@@ -1,0 +1,12 @@
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\bin\Debug\net5.0\Persistance.deps.json
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\bin\Debug\net5.0\Persistance.dll
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\bin\Debug\net5.0\ref\Persistance.dll
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\bin\Debug\net5.0\Persistance.pdb
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.csprojAssemblyReference.cache
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfoInputs.cache
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.AssemblyInfo.cs
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.csproj.CoreCompileInputs.cache
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.dll
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\ref\Persistance.dll
+C:\Users\amirr\source\repos\AuthenticationStartAspNetCore\Persistance\obj\Debug\net5.0\Persistance.pdb

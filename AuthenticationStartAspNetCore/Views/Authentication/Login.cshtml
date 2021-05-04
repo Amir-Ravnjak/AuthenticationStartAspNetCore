@@ -1,0 +1,96 @@
+﻿@{
+    string message = (string)TempData["message"];
+    Layout = string.Empty;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="~/images/Logo.png">
+    <title>Login</title>
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div id="logo">
+            <h1>meterLAB</h1>
+            <img src="~/images/VmS_Logo.png" />
+            <h2>Prijava korisnika</h2>
+            <br />
+        </div>
+
+        <form class="form-signin" action="/Authentication/Login" method="post">
+            @if (message != null)
+            {
+                <h5 class="alert alert-danger">@message</h5>
+            }
+            <input type="text" autocomplete="off" name="username" class="form-control" placeholder="Korisničko ime" autofocus />
+            <input type="password" name="password" class="form-control" placeholder="Lozinka" />
+            <input type="text" name="ReturnUrl" value="@TempData["returnUrl"]" hidden />
+            <label><input type="checkbox" id="rememberme" name="remember" /> Zapamti me?</label>
+            <br />
+            <input type="submit" class="btn btn-primary" style="min-width:7rem;" value="Prijavi se" />
+
+        </form>
+        <br />
+        <br />
+
+
+    </div>
+</body>
+</html>
+
+<style>
+
+    .container {
+        border: 5px solid white;
+        border-radius: 10px;
+        text-align: center;
+        background-color: white;
+    }
+
+    form {
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        flex-basis: 60vw;
+        flex-grow: 1;
+        max-width: 95vw;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*background: url(../../../../images/pozadina.jpg) no-repeat center center fixed;
+        background-size: cover;*/
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+        background: white;
+    }
+
+    img {
+        width: 20%;
+        height: auto;
+        margin-top: 2pc;
+    }
+</style>
+

@@ -1,0 +1,84 @@
+﻿@using System.Security.Claims;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AuthenticationStartAspNetCore</title>
+
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success border-bottom">
+            <div class="container-fluid mx-5">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/Logo.png" height="40" style="padding-right:0.2pc;" /> Naziv projekta</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Početna</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @(User.Identity.Name)
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item text-dark" id="urediProfil" href="#">Uredi nalog</a></li>
+                                <li><a class="dropdown-item text-dark" href="/Authentication/Logout">Odjavi se</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-light bg-light border-top">
+        <div class="mx-auto">
+            &copy; @DateTime.Now.Year - VmS Group
+        </div>
+    </nav>
+    @await RenderSectionAsync("Scripts", required: false)
+    <div id="postavkeProfilaModal"></div>
+</body>
+</html>
+<style>
+    table th a {
+        color: White;
+    }
+</style>
+<script>
+    let xhttpUrediProfil=null;
+    document.getElementById("urediProfil").addEventListener("click", function () {
+        if (xhttpUrediProfil != null)
+            xhttpUrediProfil.abort();
+        xhttpUrediProfil = new XMLHttpRequest();
+        xhttpUrediProfil.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("postavkeProfilaModal").innerHTML = this.response;
+                var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                myModal.show();
+                let script = document.createElement('script');
+
+                script.src = "/js/korisniciEdit.js";
+                script.id = "korisniciEditScript";
+                document.head.appendChild(script);
+            }
+        };
+        xhttpUrediProfil.open("GET", "/Authentication/UrediProfil?Id=@User.FindFirstValue(ClaimTypes.NameIdentifier)", true);
+        xhttpUrediProfil.send(Document);
+    });
+
+</script>

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = string.Empty;
+}
+@model AuthenticationStartAspNetCore.ViewModels.AuthenticationUrediProfilVM
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Korisnik</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="/Authentication/Snimi" method="post" id="forma">
+                    <input asp-for="Id" hidden />
+                    <label asp-for="KorisnickoIme">Korisničko ime <span class='text-danger'>*</span></label>
+                    <input type="text" autocomplete="new-password" asp-for="KorisnickoIme" class="form-control" placeholder="Korisničko ime" required />
+                    <div id="errorUsername" class="error text-danger"></div>
+                    <label asp-for="Lozinka">Lozinka <span class='text-danger'>*</span></label>
+                    <input type="password" autocomplete="new-password" asp-for="Lozinka" class="form-control" required="@(Model.Id == 0)" placeholder="********" />
+                    <div id="errorPassword" class="error text-danger"></div>                    
+                    <label asp-for="Ime">Ime <span class='text-danger'>*</span></label>
+                    <input asp-for="Ime" class="form-control" placeholder="Ime" required />
+                    <label asp-for="Prezime">Prezime <span class='text-danger'>*</span></label>
+                    <input asp-for="Prezime" class="form-control" placeholder="Prezime" required />
+                    <label asp-for="Email">Email <span class='text-danger'>*</span></label>
+                    <input asp-for="Email" class="form-control" placeholder="E-mail" required />
+                    <div id="errorEmail" class="error text-danger"></div>
+                    <label asp-for="Telefon"></label>
+                    <input asp-for="Telefon" class="form-control" placeholder="Broj telefona" />
+                    <input type="submit" id="btnSubmitForm" hidden />
+                    <div><span class='text-danger'>*</span> - Obavezna polja</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                <button type="button" class="btn btn-primary" id="btnSnimi">Snimi</button>
+            </div>
+        </div>
+    </div>
+</div>
